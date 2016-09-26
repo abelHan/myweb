@@ -10,5 +10,33 @@ djnago 基本命令
 	python manage.py makemigrations
 	python manage.py migrate
 
+4 使用开发服务器
+	python manage.py runserver
+ 
+	# 当提示端口被占用的时候，可以用其它端口：
+	python manage.py runserver 8001
+	python manage.py runserver 9999
+	（当然也可以kill掉占用端口的进程）
+	 
+	# 监听所有可用 ip （电脑可能有一个或多个内网ip，一个或多个外网ip，即有多个ip地址）
+	python manage.py runserver 0.0.0.0:8000
+	# 如果是外网或者局域网电脑上可以用其它电脑查看开发服务器
+	# 访问对应的 ip加端口，比如 http://172.16.20.2:8000
+5 创建超级管理员
+	python manage.py createsuperuser
+	 
+	# 按照提示输入用户名和对应的密码就好了邮箱可以留空，用户名和密码必填
+	 
+	# 修改 用户密码可以用：
+	python manage.py changepassword username	
+
+6 导出数据 导入数据
+	python manage.py dumpdata appname > appname.json
+	python manage.py loaddata appname.json
+
+7 项目终端
+	python manage.py shell
+	
+
 
 	
